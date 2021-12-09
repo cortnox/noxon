@@ -1,7 +1,7 @@
 //import { Fragment } from 'hls.js';
 //import DropDownBar from './DropDownBar';
 import React, { Fragment, SyntheticEvent, useState } from 'react';
-import { /*Link,*/ Redirect } from 'react-router-dom';
+import { /*Link,*/ Navigate } from 'react-router-dom';
 import NavAuthBar from './NavAuthBar';
 import AnonymousBar from './Anonymous/AnonymousBar';
 import Anonymous from './Anonymous/Anonymous';
@@ -82,7 +82,7 @@ const Nav = (
         return (
             <Fragment>
                 {nav}
-                {<Redirect to="/logout" />}
+                {<Navigate to="/logout" />}
             </Fragment>
         );
     }
@@ -104,9 +104,9 @@ export default Nav;
                 <Link to="/" className="nav-link active" aria-current="page" href="/">Home</Link>
                 </li>
                 <li className="nav-item">
-                <a className="nav-link" href="/">    |</a>
                 </li>
                 <li className="nav-item">
+                <a className="nav-link" href="/">    |</a>
                 <a className="nav-link disabled" href="/">    |</a>
                 </li>
                 <li className="nav-item">

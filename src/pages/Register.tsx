@@ -7,7 +7,7 @@ import HashedPassword from '../components/UI/Form/HashedPassword';
 import CheckBox from '../components/UI/Form/CheckBox';
 import TextField from '../components/UI/Form/TextField';
 //import '../components/UI/Form/TextField.css';
-import { Redirect } from 'react-router';
+import { Navigate } from 'react-router';
 const Register = (
   props: {
     name:string, 
@@ -64,7 +64,7 @@ const Register = (
   }
   if (redirect) {
     console.log("redirecting");
-    return <Redirect to="/login"/>
+    return <Navigate to="/login"/>
   }
 
 
