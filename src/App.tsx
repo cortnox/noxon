@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 //import '../node_modules/hls.js/dist/hls.js';
 import Login from './pages/Login';
 import Navigation from './components/UI/Navigation/Navigation';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Account from './pages/Account';
 import Register from './pages/Register';
@@ -76,18 +76,20 @@ function App() {
       <BrowserRouter>
         <Navigation name={name} setName={setName} authenticated={authenticated} />
         <main>
-          <Route path="/" exact component={() => <Home name={name} />} />
-          <Route path="/login" component={() => <Login setName={setName} email={''} password={''} />} />
-          <Route path="/register" component={() => <Register name={''} email={''} password={''} />} />
-          <Route path="/account" exact component={() => <Account name={name} />} />
-          <Route path="/account/journal" exact component={() => <Journal name={name} />} />
-          <Route path="/account/memo" exact component={() => <Memo />} />
-          <Route path="/account/stock" exact component={() => <Stock />} />
-          <Route path="/account/signinii" exact component={() => <SignInII />} />
-          <Route path="/account/counter" exact component={() => <Counter />} />
-          <Route path="/account/todos" exact component={() => <ToDo />} />
-          <Route path="/account/tasks" exact component={() => <TaskCC />} />
-          <Route path="/logout" exact component={() => <Logout />} />
+          <Routes>
+          <Route path="/" element={<Home name={name} />} />
+          <Route path="/login" element={<Login setName={setName} email={''} password={''} />} />
+          <Route path="/register" element={<Register name={''} email={''} password={''} />} />
+          <Route path="/account" element={<Account name={name} />} />
+          <Route path="/account/journal" element={<Journal name={name} />} />
+          <Route path="/account/memo" element={<Memo />} />
+          <Route path="/account/stock" element={<Stock />} />
+          <Route path="/account/signinii" element={<SignInII />} />
+          <Route path="/account/counter" element={<Counter />} />
+          <Route path="/account/todos" element={<ToDo />} />
+          <Route path="/account/tasks" element={<TaskCC />} />
+          <Route path="/logout" element={<Logout />} />
+          </Routes>
         </main>
       </BrowserRouter>
     </div>

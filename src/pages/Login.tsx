@@ -1,11 +1,11 @@
+import logo from '../logo.svg';
 import React, { SyntheticEvent, useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import Card from '../components/UI/Card/Card';
 import TextEmail from '../components/UI/Form/TextEmail';
 import HashedPassword from '../components/UI/Form/HashedPassword';
 import CheckBox from '../components/UI/Form/CheckBox';
 import '../components/SignIn/SignIn.css';
-import logo from '../logo.svg';
 import Modal from '../components/UI/Modal/Modal';
 const Login = (
   props:{
@@ -60,7 +60,7 @@ const Login = (
 }; 
 
   if (redirect) {
-    return <Redirect to="/account"/>
+    return <Navigate to="/account"/>
   }
       //<Modal title={''} content={''}/>
     return (
